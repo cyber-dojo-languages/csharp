@@ -1,5 +1,5 @@
-FROM cyberdojofoundation/alpine_glibc
-MAINTAINER Jon Jagger <jon@jaggersoft.com>
+FROM  cyberdojofoundation/alpine_glibc
+LABEL maintainer=jon@jaggersoft.com
 
 # Copied from frolvlad/alpine-mono
 
