@@ -9,3 +9,5 @@ RUN apk add --no-cache --virtual=.build-dependencies wget ca-certificates tar xz
  && cert-sync /etc/ssl/certs/ca-certificates.crt \
  && apk del .build-dependencies \
  && rm /tmp/*
+
+ RUN mcs --version | grep -q 5.0.0.0
