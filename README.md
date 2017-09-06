@@ -1,4 +1,4 @@
-# csharp 4.6.1
+# csharp 5.0.0
 
-![Build Status](https://travis-ci.org/cyber-dojo-languages/csharp-4.6.1.svg?branch=master)
+![Build Status](https://travis-ci.org/cyber-dojo-languages/csharp-5.0.0.svg?branch=master)
 
