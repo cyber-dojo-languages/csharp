@@ -1,4 +1,4 @@
-FROM  cyberdojofoundation/alpine_glibc:3.6
+FROM  cyberdojofoundation/alpine_glibc:3.7
 LABEL maintainer=jon@jaggersoft.com
 
 # Copied from frolvlad/alpine-mono
