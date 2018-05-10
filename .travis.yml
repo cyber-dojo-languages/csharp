@@ -1,5 +1,8 @@
 services: docker
 language: bash
+addons:
+    apt:
+      update: true
 
 script:
     - SCRIPT=run_build_image.sh
