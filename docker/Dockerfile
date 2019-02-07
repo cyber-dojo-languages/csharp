@@ -1,7 +1,16 @@
-FROM  cyberdojofoundation/alpine_glibc
+FROM cyberdojofoundation/alpine_glibc
 LABEL maintainer=jon@jaggersoft.com
 
-ADD install.sh /
-
-RUN /install.sh && \
-    rm -f /install.sh
+# From frolvlad/alpine-mono
+RUN \
+apk add --no-cache --virtual=.build-dependencies \
+  ca-certificates \
+  tar \
+  wget \
+  xz && \
+\
+wget "https://archive.archlinux.org/packages/m/mono/mono-5.12.0.260-1-x86_64.pkg.tar.xz" -O "/tmp/mono.pkg.tar.xz" && \
+tar -xJf "/tmp/mono.pkg.tar.xz" && \
+cert-sync /etc/ssl/certs/ca-certificates.crt && \
+apk del .build-dependencies && \
+rm /tmp/*
