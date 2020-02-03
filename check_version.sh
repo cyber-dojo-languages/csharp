@@ -1,8 +1,13 @@
 #!/bin/bash -Eeu
 
+readonly REGEX="image_name\": \"(.*)\""
+readonly JSON=`cat docker/image_name.json`
+[[ ${JSON} =~ ${REGEX} ]]
+readonly IMAGE_NAME="${BASH_REMATCH[1]}"
+
 readonly MY_DIR="$( cd "$( dirname "${0}" )" && pwd )"
-readonly EXPECTED=5.20.1.0
-readonly ACTUAL=$(docker run --rm -it cyberdojofoundation/csharp sh -c 'mcs --version')
+readonly EXPECTED=6.4.0
+readonly ACTUAL=$(docker run --rm -it ${IMAGE_NAME} sh -c 'mcs --version')
 
 if echo "${ACTUAL}" | grep -q "${EXPECTED}"; then
   echo "VERSION CONFIRMED as ${EXPECTED}"
