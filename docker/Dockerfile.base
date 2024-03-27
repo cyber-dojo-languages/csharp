@@ -1,4 +1,4 @@
-FROM cyberdojofoundation/alpine_glibc:7becbb4
+FROM cyberdojofoundation/alpine_glibc:3025b6b
 LABEL maintainer=jon@jaggersoft.com
 
 COPY install.sh .
