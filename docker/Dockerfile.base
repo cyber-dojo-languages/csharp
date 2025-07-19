@@ -1,5 +1,2 @@
-FROM cyberdojofoundation/alpine_glibc:3025b6b
+FROM frolvlad/alpine-mono:latest
 LABEL maintainer=jon@jaggersoft.com
-
-COPY install.sh .
-RUN ./install.sh && rm ./install.sh
