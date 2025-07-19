@@ -1,2 +1,5 @@
 FROM frolvlad/alpine-mono:latest
 LABEL maintainer=jon@jaggersoft.com
+
+COPY install.sh .
+RUN ./install.sh && rm ./install.sh
