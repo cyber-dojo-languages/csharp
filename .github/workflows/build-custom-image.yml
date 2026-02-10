@@ -1,0 +1,34 @@
+name: Main
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  PACKAGES_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  PACKAGES_USERNAME: ${{ github.actor }}
+  REPO_NAME: ${{ github.event.repository.name }}
+
+jobs:
+
+  build-publish-trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
+
+      - name: Install buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and publish image
+        run: |
+          cd custom-base-image
+          ./build-image.sh
+          export SHORT_SHA="$(git rev-parse --short HEAD)"
+          docker tag cyber-dojo-languages/csharp:latest ghcr.io/cyber-dojo-languages/csharp:${SHORT_SHA}
+          docker push ghcr.io/cyber-dojo-languages/csharp:${SHORT_SHA}
