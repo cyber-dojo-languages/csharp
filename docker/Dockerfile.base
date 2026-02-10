@@ -1,11 +1,2 @@
-FROM cyber-dojo-languages/csharp
+FROM ghcr.io/cyber-dojo-languages/csharp:00c6804
 LABEL maintainer=jon@jaggersoft.com
-
-#RUN apt-get update
-#RUN apt-get install --yes adduser
-#RUN ln -s /usr/sbin/addgroup /usr/sbin/groupadd
-# (addgroup  51966 sandbox)
-
-#RUN echo "Welcome to Alpine Linux 3.22" > /etc/issue
-#COPY install.sh .
-#RUN ./install.sh && rm ./install.sh
