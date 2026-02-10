@@ -31,4 +31,5 @@ jobs:
           ./build-image.sh
           export SHORT_SHA="$(git rev-parse --short HEAD)"
           docker tag cyber-dojo-languages/csharp:latest ghcr.io/cyber-dojo-languages/csharp:${SHORT_SHA}
+          echo "${PACKAGES_TOKEN}" | docker login ghcr.io -u "${PACKAGES_USERNAME}" --password-stdin
           docker push ghcr.io/cyber-dojo-languages/csharp:${SHORT_SHA}
