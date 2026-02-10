@@ -1,2 +1,3 @@
-FROM ghcr.io/cyber-dojo-languages/csharp:8b8b875
+FROM dhi.io/dotnet:10-sdk-alpine3.22
 LABEL maintainer=jon@jaggersoft.com
+# OS=Alpine
