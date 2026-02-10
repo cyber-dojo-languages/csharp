@@ -1,2 +1,2 @@
-FROM ghcr.io/cyber-dojo-languages/csharp:00c6804
+FROM ghcr.io/cyber-dojo-languages/csharp:8b8b875
 LABEL maintainer=jon@jaggersoft.com
