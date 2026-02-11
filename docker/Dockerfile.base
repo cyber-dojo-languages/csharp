@@ -1,3 +1,2 @@
 FROM  mcr.microsoft.com/dotnet/sdk:10.0-alpine3.22
 LABEL maintainer=jon@jaggersoft.com
-# OS=Alpine
